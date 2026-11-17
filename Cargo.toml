@@ -1,0 +1,33 @@
+[package]
+name = "releaser-rs"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.80"
+license = "MIT"
+repository = "https://github.com/PaoloFernetti/releaser"
+authors = ["Paolo Fernetti"]
+description = "Semantic-release для Rust: Conventional Commits → semver, CHANGELOG, теги"
+readme = "README.md"
+keywords = ["semver", "release", "changelog", "conventional-commits", "git"]
+categories = ["development-tools", "command-line-utilities"]
+publish = true
+
+[workspace]
+
+[lints.rust]
+unsafe_code = "warn"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "warn"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+semver = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+toml_edit = { version = "0.22", features = ["serde"] }
+
+[dev-dependencies]
+tempfile = "3"
